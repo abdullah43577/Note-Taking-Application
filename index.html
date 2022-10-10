@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <title>Note Taking Application</title>
+  </head>
+  <body>
+    <main>
+      <h1>Note Taker</h1>
+      <p>Add A New Note:</p>
+      <div class="inputWrapper">
+        <label for="Note">Note:</label>
+        <textarea
+          name="Note"
+          id="noteInput"
+          placeholder="Write your note here"
+          spellcheck="true"
+        ></textarea>
+      </div>
+      <button id="addNote">Add Note</button>
+
+      <section id="noteSection"></section>
+
+      <div class="modal hidden">
+        <p class="close-modal">&times;</p>
+        <p class="paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+          laudantium neque accusamus consequatur eos dignissimos magnam at
+          eveniet quam totam.
+        </p>
+      </div>
+    </main>
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
