@@ -76,9 +76,11 @@ button:active {
   width: 25rem;
   margin: 0 10px;
   text-align: left;
-  border: 1px solid #3b3b3b;
   padding: 1.2rem 0.5rem;
   margin-top: 10px;
+  background-image: linear-gradient(to right top, #40ddddd2, #2ddb7b);
+  border-radius: 5px;
+  border: none;
 }
 
 .messageEl {
@@ -141,10 +143,4 @@ button:active {
   #noteInput {
     width: 19rem;
   }
-}
-
-.container {
-  background-image: linear-gradient(to right top, #40ddddd2, #2ddb7b);
-  border-radius: 5px;
-  border: none;
 }
