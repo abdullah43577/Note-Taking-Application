@@ -11,6 +11,7 @@ body {
   height: 100vh;
   /* overflow: hidden; */
   background: linear-gradient(to bottom right, #28b487, #7dd56f);
+  background-size: cover;
 }
 
 h1 {

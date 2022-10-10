@@ -5,7 +5,7 @@ const noteContent = [];
 const addNote = document.querySelector("#addNote");
 const noteInput = document.querySelector("#noteInput");
 const noteSection = document.querySelector("#noteSection");
-const viewMore = document.querySelectorAll(".show-Modal");
+// const viewMore = document.querySelectorAll(".show-Modal");
 const modalMessage = document.querySelector(".paragraph");
 const modalContainer = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
@@ -30,7 +30,7 @@ addNote.addEventListener("click", () => {
       textContent = `<div class="container">
                           <h3>Note ${i + 1}</h3>
                           <p class="messageEl">${noteInput.value}</p>
-                          <button class="show-Modal" onclick="showModal(event)">View Details</button>  
+                          <button class="show-Modal" onclick="showModal(event)" id="${i}">View Details</button>  
                     </div>`;
       console.log(textContent);
     }
@@ -43,16 +43,14 @@ addNote.addEventListener("click", () => {
 
 //showModal popup function
 function showModal(e) {
-  //console.log("I'm being clicked");
-  //assign the input value of the noteInput section to the innerHTML of the div container
-  for (let i = 0; i < noteContent.length; i++) {
-    modalMessage.innerHTML = noteContent[i];
-  }
-  // modalMessage.innerHTML = noteInput.value;
-  //remove the hidden class from the div modal class
+  console.log(e.target.id);
+
+  let modalRow = e.target.id;
+  let index = noteContent[noteContent.length - 1];
+  modalMessage.textContent = noteContent[modalRow];
+
   modalContainer.classList.remove("hidden");
   overlay.classList.remove("hidden");
-  //console.log(modalContainer);
 }
 
 //close Modal Button function call
