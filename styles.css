@@ -82,6 +82,7 @@ button:active {
   background-image: linear-gradient(to right top, #40ddddd2, #2ddb7b);
   border-radius: 5px;
   border: none;
+  height: 161px;
 }
 
 .messageEl {

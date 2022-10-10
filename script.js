@@ -12,6 +12,10 @@ const overlay = document.querySelector(".overlay");
 //console.log(modalContainer);
 const closeModal = document.querySelector(".close-modal");
 
+const truncateTxt = (value, length) => {
+  return value.length > length ? `${value.substring(0, length)}...` : value;
+};
+
 // function for closing down the modal popup window
 const closeModalDown = () => {
   modalContainer.classList.add("hidden");
@@ -29,7 +33,10 @@ addNote.addEventListener("click", () => {
     for (let i = 0; i < noteContent.length; i++) {
       textContent = `<div class="container">
                           <h3>Note ${i + 1}</h3>
-                          <p class="messageEl">${noteInput.value}</p>
+                          <p class="messageEl">${truncateTxt(
+                            noteInput.value,
+                            80
+                          )}</p>
                           <button class="show-Modal" onclick="showModal(event)" id="${i}">View Details</button>  
                     </div>`;
       console.log(textContent);
@@ -37,7 +44,8 @@ addNote.addEventListener("click", () => {
     noteSection.innerHTML += textContent;
     textContent = "";
   }
-  // empty the input field
+  // console.log(inputedTxt);
+  // // empty the input field
   noteInput.value = "";
 });
 
