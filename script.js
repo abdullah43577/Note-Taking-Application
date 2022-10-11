@@ -12,6 +12,7 @@ const overlay = document.querySelector(".overlay");
 //console.log(modalContainer);
 const closeModal = document.querySelector(".close-modal");
 
+// function for limiting the strings in the div container
 const truncateTxt = (value, length) => {
   return value.length > length ? `${value.substring(0, length)}...` : value;
 };
@@ -37,7 +38,7 @@ addNote.addEventListener("click", () => {
                             noteInput.value,
                             80
                           )}</p>
-                          <button class="show-Modal" onclick="showModal(event)" id="${i}">View Details</button>  
+                          <button class="show-modal" onclick="showModal(event)" id="${i}">View Details</button>  
                     </div>`;
       console.log(textContent);
     }
@@ -65,7 +66,7 @@ function showModal(e) {
 closeModal.addEventListener("click", closeModalDown);
 
 //listening for the escape key to close down the modal
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", (e) => {
   // if the press key is 'Escape' and does not contains the class of hidden
   if (e.key === "Escape" && !modalContainer.classList.contains("hidden")) {
     closeModalDown();
